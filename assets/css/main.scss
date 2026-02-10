@@ -17,7 +17,7 @@
 }
 
 /* CSS Variables for Dark Mode */
-[data-theme="dark"] {
+html[data-theme="dark"] {
     --bg-color: #1a1a1a;
     --text-color: #e5e5e5;
     --link-color: #60a5fa;
@@ -26,53 +26,174 @@
     --border-color: #404040;
 }
 
-/* Apply the variables */
-body {
+/* Force apply to body and html */
+html, body {
     background-color: var(--bg-color) !important;
     color: var(--text-color) !important;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
     font-size: 18px;
     line-height: 1.6;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-h1, h2, h3, h4, h5, h6 {
+/* Headings */
+h1, h2, h3, h4, h5, h6,
+.post-title, .page-heading, .site-title {
     color: var(--heading-color) !important;
     font-weight: 600;
 }
 
-a {
+/* Links */
+a, a:visited {
     color: var(--link-color) !important;
 }
 
-/* Override Minima's styles */
-.site-header, .site-footer {
-    background-color: var(--secondary-bg) !important;
+a:hover {
+    text-decoration: underline;
+}
+
+/* Site header and footer */
+.site-header {
+    background-color: var(--bg-color) !important;
     border-top: 1px solid var(--border-color) !important;
     border-bottom: 1px solid var(--border-color) !important;
 }
 
-.site-title, .site-title:visited {
-    color: var(--heading-color) !important;
+.site-footer {
+    background-color: var(--secondary-bg) !important;
+    border-top: 1px solid var(--border-color) !important;
+    color: var(--text-color) !important;
 }
 
 .page-content {
     background-color: var(--bg-color) !important;
 }
 
-code, pre {
-    font-family: 'JetBrains Mono', monospace;
-    background-color: var(--secondary-bg) !important;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
+/* Wrapper */
+.wrapper {
+    background-color: var(--bg-color) !important;
 }
 
-/* Theme Toggle - ensure it's fixed position */
-button.theme-toggle {
+/* Code blocks */
+code, pre, pre.highlight {
+    font-family: 'JetBrains Mono', monospace !important;
+    background-color: var(--secondary-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 4px;
+    color: var(--text-color) !important;
+}
+
+code {
+    padding: 2px 6px;
+}
+
+pre {
+    padding: 16px;
+    overflow-x: auto;
+}
+
+/* Post meta */
+.post-meta {
+    color: var(--text-color) !important;
+    opacity: 0.7;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
     position: fixed !important;
     top: 20px !important;
     right: 20px !important;
+    background-color: var(--secondary-bg) !important;
+    border: 2px solid var(--border-color) !important;
+    border-radius: 50%;
     width: 50px !important;
     height: 50px !important;
+    cursor: pointer;
     display: flex !important;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* Tag Styling */
+.tag, .tags a {
+    display: inline-block;
+    background-color: var(--secondary-bg) !important;
+    color: var(--link-color) !important;
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 14px;
+    margin: 2px;
+    text-decoration: none;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+}
+
+.tag:hover, .tags a:hover {
+    background-color: var(--link-color) !important;
+    color: var(--bg-color) !important;
+    text-decoration: none;
+}
+
+.post-tags {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.tag-group {
+    margin-bottom: 40px;
+}
+
+.tag-count {
+    opacity: 0.7;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.post-list {
+    list-style: none;
+    padding: 0;
+}
+
+.post-list li {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.post-list li:last-child {
+    border-bottom: none;
+}
+
+.post-date {
+    opacity: 0.7;
+    font-size: 14px;
+}
+
+.other-tags {
+    margin-left: 10px;
+    font-size: 13px;
+}
+
+/* Ensure all content areas use theme colors */
+article, .post, .post-content {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+}
+
+/* Lists */
+ul, ol {
+    color: var(--text-color) !important;
+}
+
+/* Paragraphs */
+p {
+    color: var(--text-color) !important;
 }
