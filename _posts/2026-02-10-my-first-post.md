@@ -13,3 +13,5 @@ Here's what I plan to write about:
 - Coding experiments
 - Things I'm learning
 - Random thoughts
+
+![Hello from this cat](/images/cats-nose.jpg)
