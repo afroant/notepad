@@ -19,11 +19,14 @@ layout: default
         </p>
     </header>
 
+    <div class="divider"></div>
+
     <div class="post-content">
         {{ content }}
     </div>
 
     {% if page.tags.size > 0 %}
+    <div class="divider"></div>
     <div class="post-tags">
         <p><strong>Tagged:</strong>
         {% for tag in page.tags %}
@@ -32,6 +35,8 @@ layout: default
         </p>
     </div>
     {% endif %}
+
+    <div class="divider"></div>
 
     <p><a href="{{ '/' | relative_url }}">← Back to all posts</a></p>
 </article>
