@@ -1,13 +1,84 @@
+/* Import a custom font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono&display=swap');
+
+/* CSS Variables for Light Mode (default) */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --link-color: #2563eb;
+    --heading-color: #1a1a1a;
+    --secondary-bg: #f5f5f5;
+    --border-color: #e5e5e5;
+}
+
+/* CSS Variables for Dark Mode */
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-color: #e5e5e5;
+    --link-color: #60a5fa;
+    --heading-color: #ffffff;
+    --secondary-bg: #2d2d2d;
+    --border-color: #404040;
+}
+
+/* Apply the variables */
 body {
-    font-family: Georgia, serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 18px;
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-h1 {
-    color: #2c5aa0;
+h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color);
+    font-weight: 600;
 }
 
-.post-content {
-    max-width: 700px;
-    margin: 0 auto;
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+code, pre {
+    font-family: 'JetBrains Mono', monospace;
+    background-color: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+code {
+    padding: 2px 6px;
+}
+
+pre {
+    padding: 16px;
+    overflow-x: auto;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: var(--secondary-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
 }
