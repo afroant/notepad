@@ -114,6 +114,10 @@ a:hover {
     gap: 1.5rem;
     align-items: center;
     margin-left: auto;
+    background: none !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 .site-nav a {
@@ -122,22 +126,19 @@ a:hover {
     background: none !important;
     border: none !important;
     padding: 0 !important;
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 .site-nav a:hover {
     text-decoration: underline !important;
 }
 
-/* Dashed divider - thicker dashes */
+/* Dashed divider - full wrapper width */
 .divider {
-    margin: 2.5rem auto;
+    width: 100%;
     max-width: 50rem;
-    padding: 0 1rem;
-}
-
-.divider::after {
-    content: '';
-    display: block;
+    margin: 2.5rem auto;
     height: 2px;
     background-image: repeating-linear-gradient(
         to right,
@@ -146,15 +147,21 @@ a:hover {
         transparent 0.5rem,
         transparent 1rem
     );
-    transition: none;
 }
 
-.header-divider {
-    margin: 0 auto;
-}
-
+/* Header and footer dividers - always visible, no animation */
+.header-divider,
 .footer-divider {
     margin: 0 auto;
+    max-width: 50rem;
+    height: 2px;
+    background-image: repeating-linear-gradient(
+        to right,
+        var(--border-color) 0,
+        var(--border-color) 0.5rem,
+        transparent 0.5rem,
+        transparent 1rem
+    );
 }
 
 /* Main content */
@@ -263,6 +270,10 @@ pre code {
 }
 
 /* Tag pages */
+.tag-page {
+    margin-bottom: 2.5rem;
+}
+
 .tag-group {
     margin-bottom: 2.5rem;
 }
@@ -322,20 +333,28 @@ pre code {
 .theme-toggle:focus {
     outline: none !important;
     box-shadow: none !important;
+    background: none !important;
+}
+
+.theme-toggle:active {
+    background: none !important;
 }
 
 .theme-toggle .material-icons {
     font-size: 1.5rem;
 }
 
-/* Mobile styles - remove button styling */
+/* Mobile styles - remove all button styling */
 @media (max-width: 48rem) {
+    .site-nav,
     .site-nav a,
     .theme-toggle {
         background: none !important;
         border: none !important;
         box-shadow: none !important;
+        outline: none !important;
         -webkit-tap-highlight-color: transparent !important;
+        -webkit-appearance: none !important;
     }
 }
 
