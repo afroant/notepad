@@ -1,5 +1,14 @@
-// Check for saved theme preference or default to light mode
-const currentTheme = localStorage.getItem('theme') || 'light';
+// Function to detect system preference
+function getSystemTheme() {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark';
+    }
+    return 'light';
+}
+
+// Check for saved theme preference, fall back to system preference
+const savedTheme = localStorage.getItem('theme');
+const currentTheme = savedTheme || getSystemTheme();
 document.documentElement.setAttribute('data-theme', currentTheme);
 
 // Update the theme toggle button
@@ -36,6 +45,18 @@ function initThemeToggle() {
         }
         
         updateThemeToggle();
+    });
+}
+
+// Listen for system theme changes (only if user hasn't manually set a preference)
+if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        // Only auto-switch if user hasn't manually set a preference
+        if (!localStorage.getItem('theme')) {
+            const newTheme = e.matches ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            updateThemeToggle();
+        }
     });
 }
 
