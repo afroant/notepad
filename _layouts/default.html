@@ -5,30 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
     <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
-    <style>
-        /* Inline critical CSS to ensure button works */
-        .theme-toggle {
-            position: fixed !important;
-            top: 20px !important;
-            right: 20px !important;
-            background-color: var(--secondary-bg);
-            border: 2px solid var(--border-color);
-            border-radius: 50%;
-            width: 50px !important;
-            height: 50px !important;
-            cursor: pointer;
-            display: flex !important;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            transition: all 0.3s ease;
-            z-index: 1000;
-        }
-        
-        .theme-toggle:hover {
-            transform: scale(1.1);
-        }
-    </style>
 </head>
 <body>
     <header class="site-header">
@@ -36,15 +12,22 @@
             <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
             <nav class="site-nav">
                 <a href="{{ '/tags/' | relative_url }}">Tags</a>
+                <button class="theme-toggle" aria-label="Toggle dark mode" type="button">
+                    <span class="material-icons">dark_mode</span>
+                </button>
             </nav>
         </div>
     </header>
+    
+    <div class="header-divider"></div>
 
     <main class="page-content">
         <div class="wrapper">
             {{ content }}
         </div>
     </main>
+
+    <div class="footer-divider"></div>
 
     <footer class="site-footer">
         <div class="wrapper">
