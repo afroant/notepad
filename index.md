@@ -3,11 +3,17 @@ layout: default
 title: Home
 ---
 
+<div class="content-intro">
+
 # Welcome to My Blog
 
 This is my personal blog where I write about projects and practice my writing.
 
 <p><a href="{{ '/tags/' | relative_url }}">Browse by tag →</a></p>
+
+</div>
+
+<div class="divider"></div>
 
 ## Recent Posts
 
@@ -30,5 +36,8 @@ This is my personal blog where I write about projects and practice my writing.
     <a href="{{ post.url | relative_url }}">Read more →</a>
     {% endif %}
   </li>
+  {% unless forloop.last %}
+  <div class="divider"></div>
+  {% endunless %}
 {% endfor %}
 </ul>
