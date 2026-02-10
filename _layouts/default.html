@@ -4,26 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1><a href="/">{{ site.title }}</a></h1>
-            <p>{{ site.description }}</p>
+    <header class="site-header">
+        <div class="wrapper">
+            <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+            <nav class="site-nav">
+                <a href="{{ '/tags/' | relative_url }}">Tags</a>
+                <a href="{{ '/about/' | relative_url }}">About</a>
+            </nav>
         </div>
     </header>
 
-    <main class="container">
-        {{ content }}
+    <main class="page-content">
+        <div class="wrapper">
+            {{ content }}
+        </div>
     </main>
 
-    <footer>
-        <div class="container">
+    <footer class="site-footer">
+        <div class="wrapper">
             <p>&copy; 2026 {{ site.title }}</p>
         </div>
     </footer>
 
-    <script src="/assets/js/theme-toggle.js"></script>
+    <script src="{{ '/assets/js/theme-toggle.js' | relative_url }}"></script>
 </body>
 </html>
