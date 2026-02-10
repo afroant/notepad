@@ -4,15 +4,26 @@ document.documentElement.setAttribute('data-theme', currentTheme);
 
 // Create and add the toggle button
 function addThemeToggle() {
+    // Remove any existing toggle button first
+    const existingButton = document.querySelector('.theme-toggle');
+    if (existingButton) {
+        existingButton.remove();
+    }
+    
     const button = document.createElement('button');
     button.className = 'theme-toggle';
     button.setAttribute('aria-label', 'Toggle dark mode');
-    button.innerHTML = currentTheme === 'dark' ? '☀️' : '🌙';
+    button.setAttribute('type', 'button');
     
-    button.addEventListener('click', function() {
-        let theme = document.documentElement.getAttribute('data-theme');
+    // Set initial icon based on current theme
+    const theme = document.documentElement.getAttribute('data-theme');
+    button.innerHTML = theme === 'dark' ? '☀️' : '🌙';
+    
+    button.addEventListener('click', function(e) {
+        e.preventDefault();
+        let currentTheme = document.documentElement.getAttribute('data-theme');
         
-        if (theme === 'light') {
+        if (currentTheme === 'light') {
             document.documentElement.setAttribute('data-theme', 'dark');
             localStorage.setItem('theme', 'dark');
             button.innerHTML = '☀️';
@@ -23,10 +34,12 @@ function addThemeToggle() {
         }
     });
     
+    // Append to body
     document.body.appendChild(button);
+    console.log('Theme toggle button added');
 }
 
-// Add the button when page loads
+// Wait for DOM to be fully loaded
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', addThemeToggle);
 } else {
