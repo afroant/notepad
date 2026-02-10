@@ -14,4 +14,4 @@ Here's what I plan to write about:
 - Things I'm learning
 - Random thoughts
 
-![Hello from this cat](/images/cats-nose.jpeg)
+![Description](/images/cats-nose.jpeg)
