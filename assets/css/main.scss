@@ -3,10 +3,10 @@
 
 @import "minima";
 
-/* Import a custom font from Google Fonts */
+/* Import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono&display=swap');
 
-/* CSS Variables for Light Mode (default) */
+/* CSS Variables for Light Mode */
 :root {
     --bg-color: #ffffff;
     --text-color: #333333;
@@ -28,8 +28,8 @@
 
 /* Apply the variables */
 body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 18px;
     line-height: 1.6;
@@ -37,129 +37,42 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: var(--heading-color);
+    color: var(--heading-color) !important;
     font-weight: 600;
 }
 
 a {
-    color: var(--link-color);
-    text-decoration: none;
+    color: var(--link-color) !important;
 }
 
-a:hover {
-    text-decoration: underline;
+/* Override Minima's styles */
+.site-header, .site-footer {
+    background-color: var(--secondary-bg) !important;
+    border-top: 1px solid var(--border-color) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+.site-title, .site-title:visited {
+    color: var(--heading-color) !important;
+}
+
+.page-content {
+    background-color: var(--bg-color) !important;
 }
 
 code, pre {
     font-family: 'JetBrains Mono', monospace;
-    background-color: var(--secondary-bg);
+    background-color: var(--secondary-bg) !important;
     border: 1px solid var(--border-color);
     border-radius: 4px;
 }
 
-code {
-    padding: 2px 6px;
-}
-
-pre {
-    padding: 16px;
-    overflow-x: auto;
-}
-
-/* Theme Toggle Button */
-.theme-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: var(--secondary-bg);
-    border: 2px solid var(--border-color);
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    transition: all 0.3s ease;
-    z-index: 1000;
-}
-
-.theme-toggle:hover {
-    transform: scale(1.1);
-}
-
-/* Tag Styling (from earlier) */
-.tag, .tags a {
-    display: inline-block;
-    background-color: var(--secondary-bg);
-    color: var(--link-color);
-    padding: 4px 12px;
-    border-radius: 16px;
-    font-size: 14px;
-    margin: 2px;
-    text-decoration: none;
-    border: 1px solid var(--border-color);
-    transition: all 0.2s ease;
-}
-
-.tag:hover, .tags a:hover {
-    background-color: var(--link-color);
-    color: var(--bg-color);
-    text-decoration: none;
-}
-
-.post-meta {
-    color: #666;
-    font-size: 14px;
-    margin-bottom: 20px;
-}
-
-[data-theme="dark"] .post-meta {
-    color: #999;
-}
-
-.post-tags {
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 1px solid var(--border-color);
-}
-
-.tag-group {
-    margin-bottom: 40px;
-}
-
-.tag-count {
-    color: #666;
-    font-size: 16px;
-    font-weight: normal;
-}
-
-.post-list {
-    list-style: none;
-    padding: 0;
-}
-
-.post-list li {
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.post-list li:last-child {
-    border-bottom: none;
-}
-
-.post-date {
-    color: #666;
-    font-size: 14px;
-}
-
-[data-theme="dark"] .post-date {
-    color: #999;
-}
-
-.other-tags {
-    margin-left: 10px;
-    font-size: 13px;
+/* Theme Toggle - ensure it's fixed position */
+button.theme-toggle {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    width: 50px !important;
+    height: 50px !important;
+    display: flex !important;
 }
