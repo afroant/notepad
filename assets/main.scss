@@ -113,43 +113,59 @@ a:hover {
     display: flex;
     gap: 1.5rem;
     align-items: center;
+    margin-left: auto;
 }
 
 .site-nav a {
     text-decoration: none !important;
     font-size: 1rem;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
 }
 
 .site-nav a:hover {
     text-decoration: underline !important;
 }
 
-/* Dashed divider */
-.header-divider,
-.footer-divider {
-    margin: 0 auto;
+/* Dashed divider - thicker dashes */
+.divider {
+    margin: 2.5rem auto;
     max-width: 50rem;
     padding: 0 1rem;
 }
 
-.header-divider::after,
-.footer-divider::before {
+.divider::after {
     content: '';
     display: block;
-    height: 1px;
+    height: 2px;
     background-image: repeating-linear-gradient(
         to right,
         var(--border-color) 0,
-        var(--border-color) 0.375rem,
-        transparent 0.375rem,
-        transparent 0.75rem
+        var(--border-color) 0.5rem,
+        transparent 0.5rem,
+        transparent 1rem
     );
+    transition: none;
+}
+
+.header-divider {
+    margin: 0 auto;
+}
+
+.footer-divider {
+    margin: 0 auto;
 }
 
 /* Main content */
 .page-content {
     padding: 3rem 0;
     min-height: 60vh;
+}
+
+/* Content intro section */
+.content-intro {
+    margin-bottom: 2.5rem;
 }
 
 /* Footer */
@@ -244,7 +260,6 @@ pre code {
 .post-tags {
     margin-top: 2.5rem;
     padding-top: 1.25rem;
-    border-top: 1px dashed var(--border-color);
 }
 
 /* Tag pages */
@@ -267,11 +282,6 @@ pre code {
 .post-list li {
     margin-bottom: 2rem;
     padding-bottom: 2rem;
-    border-bottom: 1px dashed var(--border-color);
-}
-
-.post-list li:last-child {
-    border-bottom: none;
 }
 
 .post-list h2 {
@@ -298,15 +308,35 @@ pre code {
     color: var(--text-color) !important;
     font-size: 1.5rem !important;
     transition: opacity 0.3s ease;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 .theme-toggle:hover {
     opacity: 0.7;
-    transform: none;
+}
+
+.theme-toggle:focus {
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 .theme-toggle .material-icons {
     font-size: 1.5rem;
+}
+
+/* Mobile styles - remove button styling */
+@media (max-width: 48rem) {
+    .site-nav a,
+    .theme-toggle {
+        background: none !important;
+        border: none !important;
+        box-shadow: none !important;
+        -webkit-tap-highlight-color: transparent !important;
+    }
 }
 
 /* Ensure proper colors */
