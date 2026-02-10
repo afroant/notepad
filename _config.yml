@@ -10,4 +10,4 @@ baseurl: "/notepad"
 url: "https://afroant.github.io"
 
 # Optional settings
-show_excerpts: true
+show_excerpts: false
