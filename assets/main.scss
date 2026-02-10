@@ -7,7 +7,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 /* Import Material Icons */
-@import url('https://fonts.googleapis.com/css2?family=Material+Icons');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 /* CSS Variables for Light Mode */
 :root {
@@ -16,7 +16,7 @@
     --link-color: #65B55E;
     --heading-color: #485147;
     --border-color: #485147;
-    font-size: 16px; /* Base font size for rem calculation */
+    font-size: 16px;
 }
 
 /* CSS Variables for Dark Mode */
@@ -52,9 +52,17 @@ h1, h2, h3, h4, h5, h6,
     margin-bottom: 1rem;
 }
 
-h1 { font-size: 2rem; }
-h2 { font-size: 1.5rem; }
-h3 { font-size: 1.25rem; }
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
 
 /* Links */
 a, a:visited {
@@ -66,7 +74,7 @@ a:hover {
     opacity: 0.8;
 }
 
-/* Remove Minima's default borders and backgrounds */
+/* Remove Minima defaults */
 .site-header,
 .site-footer {
     background-color: var(--bg-color) !important;
@@ -216,7 +224,7 @@ pre code {
     padding: 0;
 }
 
-/* Tag styling - text with underline only */
+/* Tag styling */
 .tag, .tags a {
     color: var(--link-color) !important;
     text-decoration: underline;
@@ -278,3 +286,34 @@ pre code {
 
 /* Theme Toggle Button */
 .theme-toggle {
+    background: none !important;
+    border: none !important;
+    cursor: pointer;
+    padding: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    display: inline-flex !important;
+    align-items: center;
+    position: static !important;
+    color: var(--text-color) !important;
+    font-size: 1.5rem !important;
+    transition: opacity 0.3s ease;
+}
+
+.theme-toggle:hover {
+    opacity: 0.7;
+    transform: none;
+}
+
+.theme-toggle .material-icons {
+    font-size: 1.5rem;
+}
+
+/* Ensure proper colors */
+p, li {
+    color: var(--text-color) !important;
+}
+
+article, .post-content {
+    background-color: var(--bg-color) !important;
+}
