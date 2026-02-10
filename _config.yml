@@ -1,5 +1,13 @@
+# Site settings
 title: My Blog
-description: A place for my writing and projects
+description: A place for writing and projects
+author: Your Name
+email: your@email.com
+
+# Build settings
 theme: minima
 baseurl: "/notepad"
 url: "https://afroant.github.io"
+
+# Optional settings
+show_excerpts: true
