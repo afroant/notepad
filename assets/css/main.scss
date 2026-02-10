@@ -1,3 +1,8 @@
+---
+---
+
+@import "minima";
+
 /* Import a custom font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono&display=swap');
 
@@ -77,8 +82,84 @@ pre {
     justify-content: center;
     font-size: 24px;
     transition: all 0.3s ease;
+    z-index: 1000;
 }
 
 .theme-toggle:hover {
     transform: scale(1.1);
+}
+
+/* Tag Styling (from earlier) */
+.tag, .tags a {
+    display: inline-block;
+    background-color: var(--secondary-bg);
+    color: var(--link-color);
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 14px;
+    margin: 2px;
+    text-decoration: none;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+}
+
+.tag:hover, .tags a:hover {
+    background-color: var(--link-color);
+    color: var(--bg-color);
+    text-decoration: none;
+}
+
+.post-meta {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+[data-theme="dark"] .post-meta {
+    color: #999;
+}
+
+.post-tags {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.tag-group {
+    margin-bottom: 40px;
+}
+
+.tag-count {
+    color: #666;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.post-list {
+    list-style: none;
+    padding: 0;
+}
+
+.post-list li {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.post-list li:last-child {
+    border-bottom: none;
+}
+
+.post-date {
+    color: #666;
+    font-size: 14px;
+}
+
+[data-theme="dark"] .post-date {
+    color: #999;
+}
+
+.other-tags {
+    margin-left: 10px;
+    font-size: 13px;
 }
