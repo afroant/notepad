@@ -2,7 +2,7 @@
 layout: post
 title: "My First Blog Post"
 date: 2026-02-10
-tags: [blogging, code, learning]
+tags: [blogging, coding, learning]
 ---
 
 This is my first post! I'm learning how to build a simple blog.
