@@ -7,6 +7,8 @@ layout: default
     
     <p><a href="{{ '/tags/' | relative_url }}">← View all tags</a></p>
 
+    <div class="divider"></div>
+
     <ul class="post-list">
     {% for post in site.tags[page.tag] %}
         <li>
@@ -27,6 +29,9 @@ layout: default
             {{ post.excerpt }}
             <a href="{{ post.url | relative_url }}">Read more →</a>
         </li>
+        {% unless forloop.last %}
+        <div class="divider"></div>
+        {% endunless %}
     {% endfor %}
     </ul>
 </div>
