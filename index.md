@@ -3,7 +3,7 @@ layout: default
 title: Home
 ---
 
-<div class="content-intro">
+<div class="content-intro" markdown="1">
 
 # Welcome to My Blog
 
