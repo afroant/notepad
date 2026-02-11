@@ -6,6 +6,8 @@ permalink: /tags/
 
 # All Tags
 
+<div class="divider"></div>
+
 {% assign sorted_tags = site.tags | sort %}
 {% for tag in sorted_tags %}
   {% assign tag_name = tag[0] %}
@@ -24,4 +26,7 @@ permalink: /tags/
       {% endfor %}
     </ul>
   </div>
+  {% unless forloop.last %}
+  <div class="divider"></div>
+  {% endunless %}
 {% endfor %}
