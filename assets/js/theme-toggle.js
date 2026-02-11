@@ -1,15 +1,5 @@
-// Function to detect system preference
-function getSystemTheme() {
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        return 'dark';
-    }
-    return 'light';
-}
-
-// Check for saved theme preference, fall back to system preference
-const savedTheme = localStorage.getItem('theme');
-const currentTheme = savedTheme || getSystemTheme();
-document.documentElement.setAttribute('data-theme', currentTheme);
+// Theme is already set by inline script in <head>
+// This script just handles the toggle button
 
 // Update the theme toggle button
 function updateThemeToggle() {
